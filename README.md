@@ -35,4 +35,4 @@ Please respond in the Zoom chat with the appropriate emoji for your OS.
 - 🍇 Linux
 
 ## Post-Workshop Survey
-[Post-Workshop Survey Form](https://forms.gle/4LgdMZwCLLwGE7879)
+Post-Workshop Survey Form
