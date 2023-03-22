@@ -2,7 +2,7 @@
 #$ -M netid@nd.edu
 #$ -m abe
 #$ -r n
-#$ -N BIP_2022_script_jobOutput
+#$ -N bioinformatics_prep_jobOutput
 
 # BASH shell script to collect and prepare omics data for biostatistical analysis
 

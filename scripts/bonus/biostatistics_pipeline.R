@@ -3,8 +3,8 @@
 ##
 
 # set the working directory
-#setwd("/YOUR/PATH/")
-setwd("/Users/bamflappy/Repos/NFCDSWorkshop_Fall2022/")
+setwd("/YOUR/PATH/")
+#setwd("/Users/bamflappy/Repos/NFCDSWorkshop_Fall2022/")
 
 # install libraries, if necessary
 #if (!require("BiocManager", quietly = TRUE))

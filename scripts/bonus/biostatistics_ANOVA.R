@@ -5,8 +5,8 @@
 ##
 
 # set the working directory
-#setwd("/YOUR/PATH/")
-setwd("/Users/bamflappy/Desktop/NFCDSWorkshop_Fall2022-main/data")
+setwd("/YOUR/PATH/")
+#setwd("/Users/bamflappy/Desktop/NFCDSWorkshop_Fall2022-main/data")
 
 
 ##

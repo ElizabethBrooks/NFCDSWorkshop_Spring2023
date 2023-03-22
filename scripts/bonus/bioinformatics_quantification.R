@@ -2,6 +2,10 @@
 
 # R script to quantify transcriptomic data for the red flour beetle
 
+# set the working directory
+setwd("/YOUR/PATH/")
+#setwd("/Users/bamflappy/Desktop/NFCDSWorkshop_Fall2022-main/data")
+
 # install the BiocManager followed by the Rsubread package, if necessary
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
