@@ -128,76 +128,6 @@
 # Pairwise Contrasts
 ##
 
-### 
-## treat_4h vs cntrl_4h
-###
-
-# perform an exact test for treat_4h vs cntrl_4h
-
-
-# view the total number of differentially expressed genes at a p-value of 0.05
-
-
-# plot log-fold change against log-counts per million with DE genes highlighted
-
-
-# add blue lines to indicate 2-fold changes
-
-
-# create a results table of DE genes
-
-
-# add column for identifying direction of DE gene expression
-
-
-# identify significantly up DE genes
-
-
-# identify significantly down DE genes
-
-
-# create volcano plot
-
-
-
-###
-## treat_24h vs cntrl_24h
-###
-
-# perform an exact test for treat_24h vs cntrl_24h
-
-
-# view the total number of differentially expressed genes at a p-value of 0.05
-
-
-# plot log-fold change against log-counts per million with DE genes highlighted
-
-
-# add blue lines to indicate 2-fold changes
-
-
-# create a results table of DE genes
-
-
-# add column for identifying direction of DE gene expression
-
-
-# identify significantly up DE genes
-
-
-# identify significantly down DE genes
-
-
-# create volcano plot
-
-
-# identify significantly DE genes by FDR
-
-
-# create filtered results table of DE genes
-
-
-
 ###
 ## treat_4h vs treat_24h
 ###
@@ -241,6 +171,75 @@
 ###
 
 # perform an exact test for cntrl_4h vs cntrl_24h
+
+
+# view the total number of differentially expressed genes at a p-value of 0.05
+
+
+# plot log-fold change against log-counts per million with DE genes highlighted
+
+
+# add blue lines to indicate 2-fold changes
+
+
+# create a results table of DE genes
+
+
+# add column for identifying direction of DE gene expression
+
+
+# identify significantly up DE genes
+
+
+# identify significantly down DE genes
+
+
+# create volcano plot
+
+
+# identify significantly DE genes by FDR
+
+
+# create filtered results table of DE genes
+
+
+### 
+## treat_4h vs cntrl_4h
+###
+
+# perform an exact test for treat_4h vs cntrl_4h
+
+
+# view the total number of differentially expressed genes at a p-value of 0.05
+
+
+# plot log-fold change against log-counts per million with DE genes highlighted
+
+
+# add blue lines to indicate 2-fold changes
+
+
+# create a results table of DE genes
+
+
+# add column for identifying direction of DE gene expression
+
+
+# identify significantly up DE genes
+
+
+# identify significantly down DE genes
+
+
+# create volcano plot
+
+
+
+###
+## treat_24h vs cntrl_24h
+###
+
+# perform an exact test for treat_24h vs cntrl_24h
 
 
 # view the total number of differentially expressed genes at a p-value of 0.05
