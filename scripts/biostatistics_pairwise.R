@@ -42,8 +42,6 @@ tribolium_counts <- read.csv("TriboliumCounts.csv", row.names="X")
 
 # add grouping factor
 group <- factor(c(rep("cntrl_4h",3), rep("treat_4h",3), rep("cntrl_24h",3), rep("treat_24h",3)))
-# why can't we just do the following?
-#group <- factor(colnames(tribolium_counts))
 
 # begin to construct the DGE list object
 list <- DGEList(counts=tribolium_counts,group=group)
