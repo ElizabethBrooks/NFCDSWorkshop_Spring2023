@@ -134,82 +134,6 @@ plotBCV(list)
 # Pairwise Contrasts
 ##
 
-### 
-## treat_4h vs cntrl_4h
-###
-
-# perform an exact test for treat_4h vs cntrl_4h
-tested_4h <- exactTest(list, pair=c("cntrl_4h", "treat_4h"))
-
-# view the total number of differentially expressed genes at a p-value of 0.05
-summary(decideTests(tested_4h))
-
-# plot log-fold change against log-counts per million with DE genes highlighted
-plotMD(tested_4h)
-
-# add blue lines to indicate 2-fold changes
-abline(h=c(-1, 1), col="blue")
-
-# create a results table of DE genes
-resultsTbl_4h <- topTags(tested_4h, n=nrow(tested_4h$table), adjust.method="fdr")$table
-
-# add column for identifying direction of DE gene expression
-resultsTbl_4h$topDE <- "NA"
-
-# identify significantly up DE genes
-resultsTbl_4h$topDE[resultsTbl_4h$logFC > 1 & resultsTbl_4h$FDR < 0.05] <- "Up"
-
-# identify significantly down DE genes
-resultsTbl_4h$topDE[resultsTbl_4h$logFC < -1 & resultsTbl_4h$FDR < 0.05] <- "Down"
-
-# create volcano plot
-ggplot(data=resultsTbl_4h, aes(x=logFC, y=-log10(FDR), color = topDE)) + 
-  geom_point() +
-  theme_minimal() +
-  scale_colour_discrete(type = ghibli_subset, breaks = c("Up", "Down"))
-
-
-###
-## treat_24h vs cntrl_24h
-###
-
-# perform an exact test for treat_24h vs cntrl_24h
-tested_24h <- exactTest(list, pair=c("cntrl_24h", "treat_24h"))
-
-# view the total number of differentially expressed genes at a p-value of 0.05
-summary(decideTests(tested_24h))
-
-# plot log-fold change against log-counts per million with DE genes highlighted
-plotMD(tested_24h)
-
-# add blue lines to indicate 2-fold changes
-abline(h=c(-1, 1), col="blue")
-
-# create a results table of DE genes
-resultsTbl_24h <- topTags(tested_24h, n=nrow(tested_24h$table), adjust.method="fdr")$table
-
-# add column for identifying direction of DE gene expression
-resultsTbl_24h$topDE <- "NA"
-
-# identify significantly up DE genes
-resultsTbl_24h$topDE[resultsTbl_24h$logFC > 1 & resultsTbl_24h$FDR < 0.05] <- "Up"
-
-# identify significantly down DE genes
-resultsTbl_24h$topDE[resultsTbl_24h$logFC < -1 & resultsTbl_24h$FDR < 0.05] <- "Down"
-
-# create volcano plot
-ggplot(data=resultsTbl_24h, aes(x=logFC, y=-log10(FDR), color = topDE)) + 
-  geom_point() +
-  theme_minimal() +
-  scale_colour_discrete(type = ghibli_subset, breaks = c("Up", "Down"))
-
-# identify significantly DE genes by FDR
-resultsTbl_24h.keep <- resultsTbl_24h$FDR < 0.05
-
-# create filtered results table of DE genes
-resultsTbl_24h_filtered <- resultsTbl_24h[resultsTbl_24h.keep,]
-
-
 ###
 ## treat_4h vs treat_24h
 ###
@@ -290,6 +214,81 @@ resultsTbl_cntrl.keep <- resultsTbl_ncntrl$FDR < 0.05
 
 # create filtered results table of DE genes
 resultsTbl_cntrl_filtered <- resultsTbl_ncntrl[resultsTbl_cntrl.keep,]
+
+### 
+## treat_4h vs cntrl_4h
+###
+
+# perform an exact test for treat_4h vs cntrl_4h
+tested_4h <- exactTest(list, pair=c("cntrl_4h", "treat_4h"))
+
+# view the total number of differentially expressed genes at a p-value of 0.05
+summary(decideTests(tested_4h))
+
+# plot log-fold change against log-counts per million with DE genes highlighted
+plotMD(tested_4h)
+
+# add blue lines to indicate 2-fold changes
+abline(h=c(-1, 1), col="blue")
+
+# create a results table of DE genes
+resultsTbl_4h <- topTags(tested_4h, n=nrow(tested_4h$table), adjust.method="fdr")$table
+
+# add column for identifying direction of DE gene expression
+resultsTbl_4h$topDE <- "NA"
+
+# identify significantly up DE genes
+resultsTbl_4h$topDE[resultsTbl_4h$logFC > 1 & resultsTbl_4h$FDR < 0.05] <- "Up"
+
+# identify significantly down DE genes
+resultsTbl_4h$topDE[resultsTbl_4h$logFC < -1 & resultsTbl_4h$FDR < 0.05] <- "Down"
+
+# create volcano plot
+ggplot(data=resultsTbl_4h, aes(x=logFC, y=-log10(FDR), color = topDE)) + 
+  geom_point() +
+  theme_minimal() +
+  scale_colour_discrete(type = ghibli_subset, breaks = c("Up", "Down"))
+
+
+###
+## treat_24h vs cntrl_24h
+###
+
+# perform an exact test for treat_24h vs cntrl_24h
+tested_24h <- exactTest(list, pair=c("cntrl_24h", "treat_24h"))
+
+# view the total number of differentially expressed genes at a p-value of 0.05
+summary(decideTests(tested_24h))
+
+# plot log-fold change against log-counts per million with DE genes highlighted
+plotMD(tested_24h)
+
+# add blue lines to indicate 2-fold changes
+abline(h=c(-1, 1), col="blue")
+
+# create a results table of DE genes
+resultsTbl_24h <- topTags(tested_24h, n=nrow(tested_24h$table), adjust.method="fdr")$table
+
+# add column for identifying direction of DE gene expression
+resultsTbl_24h$topDE <- "NA"
+
+# identify significantly up DE genes
+resultsTbl_24h$topDE[resultsTbl_24h$logFC > 1 & resultsTbl_24h$FDR < 0.05] <- "Up"
+
+# identify significantly down DE genes
+resultsTbl_24h$topDE[resultsTbl_24h$logFC < -1 & resultsTbl_24h$FDR < 0.05] <- "Down"
+
+# create volcano plot
+ggplot(data=resultsTbl_24h, aes(x=logFC, y=-log10(FDR), color = topDE)) + 
+  geom_point() +
+  theme_minimal() +
+  scale_colour_discrete(type = ghibli_subset, breaks = c("Up", "Down"))
+
+# identify significantly DE genes by FDR
+resultsTbl_24h.keep <- resultsTbl_24h$FDR < 0.05
+
+# create filtered results table of DE genes
+resultsTbl_24h_filtered <- resultsTbl_24h[resultsTbl_24h.keep,]
 
 
 ##
